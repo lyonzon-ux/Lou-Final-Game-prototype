@@ -26,13 +26,13 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
           }
 
-        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'RUNNER', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'BIRDS AND THE BEES', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2, 'Use <--> arrows to move', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press <- for Novice or -> for Expert', menuConfig).setOrigin(0.5);
 
         menuConfig.backgroundColor = '#42b249'
         menuConfig.color = '#000'
-        this.add.text(game.config.width/2, game.config.height/1.75 + borderUISize + borderPadding, 'Avoid the bolts but collect the bread!', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/1.75 + borderUISize + borderPadding, 'Avoid the BIRDS but collect the FLOWERS!', menuConfig).setOrigin(0.5);
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);

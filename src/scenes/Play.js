@@ -21,7 +21,6 @@ class Play extends Phaser.Scene {
         this.ship03 = new Spaceship(this, borderUISize*5, 0, 'spaceship', 0, -1,4).setOrigin(0,0);
         this.ship04 = new Newship(this, borderUISize*5.5, 0, 'newship', 0, 1).setOrigin(0,0);
         this.add.rectangle(0,borderUISize+borderPadding, game.config.width, borderUISize * 2, 0x6b6868).setOrigin(0,0);
-        
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -66,17 +65,16 @@ class Play extends Phaser.Scene {
         if(this.checkCollision(this.p1Rocket, this.ship03)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship03);
-            game.settings.gameTimer -= 2000;   
           }
           if (this.checkCollision(this.p1Rocket, this.ship02)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship02);
-            game.settings.gameTimer -= 2000;
+
           }
           if (this.checkCollision(this.p1Rocket, this.ship01)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
-            game.settings.gameTimer -= 2000;
+ 
           }
         if (this.checkCollision(this.p1Rocket, this.ship04)) {
             this.p1Rocket.reset();
@@ -97,16 +95,10 @@ class Play extends Phaser.Scene {
         }
     }
     shipExplode(ship) {
-        // temporarily hide ship
+
         ship.alpha = 0;
-        // create explosion sprite at ship's position
-        let boom = this.add.sprite(ship.x, ship.y, 'explosion').setOrigin(0, 0);
-        boom.anims.play('explode'); 
-        ship.reset();                         // reset ship position
-          ship.alpha = 1;            // play explode animation
-        boom.on('animationcomplete', () => {    // callback after anim completes                         
-          boom.destroy();                       // remove explosion sprite
-        });   
+        ship.reset();                     
+          ship.alpha = 1;          
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;       
         this.sound.play('sfx_explosion');       

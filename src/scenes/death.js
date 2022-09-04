@@ -32,7 +32,7 @@ class Death extends Phaser.Scene {
 
         deathConfig.backgroundColor = '#42b249'
         deathConfig.color = '#000'
-        this.add.text(game.config.width/2, game.config.height/1.75 + borderUISize + borderPadding, 'Remember avoid the bolts but collect the bread!', deathConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/1.75 + borderUISize + borderPadding, 'Remember avoid the BIRDS but collect the FLOWERS!', deathConfig).setOrigin(0.5);
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
